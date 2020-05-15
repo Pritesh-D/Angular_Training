@@ -1,0 +1,19 @@
+<div>
+    <div class="form-group col-md-5 float-right">
+        <input type="text" class="form-control" id="inputProductSearch" placeholder="Search" [(ngModel)]="SearchQuery"
+            (keyup)="onSearchEvent()">
+    </div>
+    <table class="table table-hover float-right">
+        <thead class="table-darkk">
+            <tr>
+                <td *ngFor="let header of Headers">{{header}}
+                </td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let prod of Data">
+                <td *ngFor="let header of Headers">{{prod[header]}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
