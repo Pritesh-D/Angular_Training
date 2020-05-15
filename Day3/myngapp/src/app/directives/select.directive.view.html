@@ -1,0 +1,19 @@
+<!-- <select type="select" class="form-control" name="category" [(ngModel)]="SelectedValue" (change)="onOptionSelectEvent()">
+    <option *ngFor="let c of Data" value={{c}}><input type="radio" value="{{c}}">{{c}}</option>
+</select> -->
+<div class="clearfix"></div>
+<div ngbDropdown class="d-inline-block" style="width: 100%;">
+    <button type="button" class="btn btn-outline-primary" id="dropdown" ngbDropdownToggle
+        style="width: 100%; text-align: left;">{{SelectedValue?SelectedValue:"Select"}}</button>
+    <div ngbDropdownMenu aria-labelledby="dropdown" style="width: 100%;">
+        <div *ngFor="let c of Data" class="row">
+            <div class="col-md-2" style="padding-top:2% ;">
+                <input *ngIf="c==SelectedValue" selcted checked name="category" value={{c}} type="radio"
+                    class="dropdown-item" ge (click)="onOptionSelectEvent(c)">
+                <input *ngIf="c!=SelectedValue" name="category" value={{c}} type="radio" class="dropdown-item" ge
+                    (click)="onOptionSelectEvent(c)">
+            </div>
+            <span>{{c}}</span>
+        </div>
+    </div>
+</div>
